@@ -1,16 +1,14 @@
 "use strict";
 function solve10(inputArr) {
     console.log(sumNumbers(inputArr));
-    console.log(sumInverseValuesOfTheNumbers(inputArr));
+    console.log(sumNumbers(inputArr, true));
     console.log(concatNumbers(inputArr));
 }
-function sumNumbers(arr) {
-    const sum = arr.reduce((acc, number) => acc += number, 0);
+function sumNumbers(arr, inversed = false) {
+    const sum = inversed ?
+        arr.reduce((acc, number) => acc += 1 / number, 0)
+        : arr.reduce((acc, number) => acc += number, 0);
     return sum;
-}
-function sumInverseValuesOfTheNumbers(arr) {
-    const inverseSum = arr.reduce((acc, number) => acc += 1 / number, 0);
-    return inverseSum;
 }
 function concatNumbers(arr) {
     const result = arr.join('');
