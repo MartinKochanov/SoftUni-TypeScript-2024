@@ -8,7 +8,7 @@ const getUsers = () => {
         });
     })
         .catch(err => {
-        console.log(err);
+        console.log(`Error: ${err}`);
     });
 };
 getUsers();
